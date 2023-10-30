@@ -13,7 +13,7 @@ export default function Slider({ users }) {
     useEffect(() => {
         const sliderInterval = setInterval(() => {
             setCurrentIndex((prevIndex) => (prevIndex + 1) % duplicatedUsers.length);
-        }, 2000); // Cambia el valor 2000 para ajustar la velocidad de cambio de diapositivas.
+        }, 2000);
 
         return () => clearInterval(sliderInterval);
     }, [users]);
@@ -26,7 +26,7 @@ export default function Slider({ users }) {
                         className={`${styles.slide} ${index === currentIndex ? 'active' : ''}`}
                         key={index}
                     >
-                        <img src={user.avatar} alt={`User ${index}`} />
+                        <img className='rounded-3xl' src={user.avatar} alt={`User ${index}`} />
                     </div>
                 ))}
             </div>

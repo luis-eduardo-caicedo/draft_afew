@@ -2,8 +2,9 @@
 
 import Link from "next/link"
 import React, { useRef, useState } from 'react';
+import Image from 'next/image';
 
-export function NavbarResponsive() {
+export function NavbarLoggin() {
     const botonRef = useRef(null);
     const menuRef = useRef(null);
     const [isMenuHidden, setIsMenuHidden] = useState(true);
@@ -31,11 +32,23 @@ export function NavbarResponsive() {
                     <Link href="/terminal" className="text-teal-950 block mt-4 lg:inline-block lg:mt-0 hover:text-slate-400 mr-6">Terminal</Link>
                     <Link href="/contact" className="text-teal-950 block mt-4 lg:inline-block lg:mt-0 hover:text-slate-400 mr-6">Contact</Link>
                     <Link href="/blog" className="text-teal-950 block mt-4 lg:inline-block lg:mt-0 hover:text-slate-400 mr-6">Blog</Link>
-                    <Link href="/main" className="text-teal-950 block mt-4 lg:inline-block lg:mt-0 hover:textxl:h-24-slate-400">Main</Link>
+                    <Link href="/main" className="text-teal-950 block mt-4 lg:inline-block lg:mt-0 hover:text-slate-400">Main</Link>
                 </div>
                 <div className="flex flex-row items-center justify-end gap-4 mr-14">
-                    <Link href="/login" className="rounded-2xl bg-slate-800 px-4 py-2 font-bold leading-none text-white hover:text-gray-500">Log in</Link>
-                    <Link href="/signup" className="text-teal-950 font-bold hover:text-gray-400">Sign up</Link>
+                    <form>
+                        <label htmlFor="default-search" className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                        <div className="relative">
+                            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                <svg className="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                    <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                                </svg>
+                            </div>
+                            <input type="search" id="default-search" className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-200 dark:border-gray-200 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search..." />
+                                <button type="submit" className="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-slate-600 dark:hover:bg-slate-500 dark:focus:ring-blue-800">Search</button>
+                        </div>
+                    </form>
+                    <Link href="/login" className="rounded-3xl bg-slate-700 px-8 py-3 font-bold leading-none text-white hover:text-gray-500 mr-4">Upload</Link>
+                    <Image src="/user.png" alt='Icon' width={45} height={45} className="" />
                 </div>
             </div>
         </nav>
